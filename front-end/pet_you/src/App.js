@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom"
 import { Layout, ConfigProvider } from 'antd'
 import zhTW from 'antd/lib/locale/zh_TW'
+import { observer } from 'mobx-react-lite'
 // import Cookies from 'js-cookie'
 
 import Header from './components/Header/Header.js'
@@ -21,8 +22,11 @@ import NotFound from './components/Other/NotFound.js'
 import ErrorPage from './components/Other/ErrorPage.js'
 import Footer from './components/Footer/Footer.js'
 
+import { useStore } from './store/index.js'
+
 
 function App () {
+  const { menuStore } = useStore()
 
   window.onbeforeunload = () => {
     // Cookies.remove('userMenuSelected')
@@ -34,7 +38,7 @@ function App () {
   return (
     <ConfigProvider locale={zhTW}>
       <Layout className="layout">
-        {window.location.href.indexOf('/error') !== -1 ? <></> : <Header />}
+        {menuStore.error ? null : <Header />}
         <Layout style={{
           minHeight: '85.7vh',
         }}>
@@ -58,15 +62,15 @@ function App () {
             <Route path='/Pet_you/shop' element={<Shop />}></Route>
             <Route path='/Pet_you/vet' element={<Vet />}></Route>
             <Route path='/Pet_you/lost' element={<Lost />}></Route>
-            <Route path="/Pet_you/error" element={<ErrorPage />}></Route>
+            <Route path="/Pet_you/:error" element={<ErrorPage />}></Route>
             <Route path="*" element={<NotFound />}></Route>
           </Routes>
 
         </Layout>
-        {window.location.href.indexOf('/error') !== -1 ? <></> : <Footer />}
+        {menuStore.error ? null : <Footer />}
       </Layout>
     </ConfigProvider>
   )
 }
 
-export default App
+export default observer(App)

@@ -1,5 +1,5 @@
 import { Menu, Avatar } from 'antd'
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { UserOutlined, ShopOutlined } from '@ant-design/icons'
 import { useEffect, useState } from 'react'
 import { observer } from 'mobx-react-lite'
@@ -28,6 +28,7 @@ const initLoginAry = [
 function HeaderMenu () {
   const { menuStore, userStore, storeStore } = useStore()
   const [loginAry, setLoginAry] = useState(initLoginAry)
+  const navigate = useNavigate()
 
   useEffect(() => {
     (async function getData () {
@@ -56,6 +57,10 @@ function HeaderMenu () {
             label: <Link to="/Pet_you/user">{response.data.data.nickName}</Link>
           }
         ])
+      }).catch((error) => {
+        console.log(error)
+        menuStore.setError()
+        navigate('/Pet_you/error')
       })
     })()
     // eslint-disable-next-line react-hooks/exhaustive-deps

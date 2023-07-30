@@ -6,6 +6,7 @@ class MenuStore {
   userMenuSelected = Cookies.get('userMenuSelected') === undefined ? 'm-1' : Cookies.get('userMenuSelected')
   headerSelected = Cookies.get('headerSelected') === undefined ? 'h-2' : Cookies.get('headerSelected')
   storeMenuSelected = Cookies.get('storeMenuSelected') === undefined ? 's-1' : Cookies.get('storeMenuSelected')
+  error = false
 
   constructor() {
     makeAutoObservable(this)
@@ -31,6 +32,9 @@ class MenuStore {
   storeMenuAcceptClick = (e) => {
     this.storeMenuSelected = e.key
     Cookies.set('storeMenuSelected', this.storeMenuSelected)
+  }
+  setError = () => {
+    this.error = true
   }
 
 }
