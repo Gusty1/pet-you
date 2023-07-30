@@ -66,7 +66,7 @@ function ShoppingCar () {
 
   //前往商品詳細頁
   function goOrder () {
-    navigate('/order/one')
+    navigate('/Pet_you/order/one')
   }
 
   const columns = [

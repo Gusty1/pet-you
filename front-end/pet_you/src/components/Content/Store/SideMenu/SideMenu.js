@@ -10,16 +10,16 @@ function SideMenu () {
 
   let testAry = [{
     key: 's-1',
-    label: <Link to="/store/food">食品</Link>,
+    label: <Link to="/Pet_you/store/food">食品</Link>,
   }, {
     key: 's-2',
-    label: <Link to="/store/toy">玩具</Link>,
+    label: <Link to="/Pet_you/store/toy">玩具</Link>,
   }, {
     key: 's-3',
-    label: <Link to="/store/cosmetic">美容</Link>,
+    label: <Link to="/Pet_you/store/cosmetic">美容</Link>,
   }, {
     key: 's-4',
-    label: <Link to="/store/other">其他</Link>,
+    label: <Link to="/Pet_you/store/other">其他</Link>,
   }]
 
   //連結點擊

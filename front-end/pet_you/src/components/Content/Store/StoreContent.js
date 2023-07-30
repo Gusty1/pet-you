@@ -10,7 +10,7 @@ function StoreContent () {
   const navigate = useNavigate()
 
   useEffect(() => {
-    if (params.type === undefined) navigate('/store/food')
+    if (params.type === undefined) navigate('/Pet_you/store/food')
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 

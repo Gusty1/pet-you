@@ -1,5 +1,5 @@
 import { Menu, Avatar } from 'antd'
-import { Link, useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { UserOutlined, ShopOutlined } from '@ant-design/icons'
 import { useEffect, useState } from 'react'
 import { observer } from 'mobx-react-lite'
@@ -17,18 +17,17 @@ const initLoginAry = [
   }, {
     icon: <ShopOutlined />,
     key: 'h-2',
-    label: <Link to="/store/food">商城</Link>
+    label: <Link to="/Pet_you/store/food">商城</Link>
   }, {
     icon: <UserOutlined />,
     key: 'h-3',
-    label: <Link to="/user">登入</Link>
+    label: <Link to="/Pet_you/user">登入</Link>
   }
 ]
 
 function HeaderMenu () {
   const { menuStore, userStore, storeStore } = useStore()
   const [loginAry, setLoginAry] = useState(initLoginAry)
-  const navigate = useNavigate()
 
   useEffect(() => {
     (async function getData () {
@@ -46,7 +45,7 @@ function HeaderMenu () {
           }, {
             icon: <ShopOutlined />,
             key: 'h-2',
-            label: <Link to="/store/food">商城</Link>
+            label: <Link to="/Pet_you/store/food">商城</Link>
           }, {
             icon: '',
             key: 'h-2-2',
@@ -54,12 +53,9 @@ function HeaderMenu () {
           }, {
             icon: <Avatar src={avatarUrl} alt="error" />,
             key: 'h-3',
-            label: <Link to="/user">{response.data.data.nickName}</Link>
+            label: <Link to="/Pet_you/user">{response.data.data.nickName}</Link>
           }
         ])
-      }).catch((error) => {
-        console.log(error)
-        navigate('/error')
       })
     })()
     // eslint-disable-next-line react-hooks/exhaustive-deps

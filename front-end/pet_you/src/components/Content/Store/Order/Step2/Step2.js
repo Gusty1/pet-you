@@ -40,7 +40,7 @@ function Step2 () {
   //上一步
   function getPrevious () {
     storeStore.setOrderStep(0)
-    navigate('/order/one')
+    navigate('/Pet_you/order/one')
 
   }
 
@@ -60,7 +60,7 @@ function Step2 () {
         storeStore.setChangeOrderCar()
         storeStore.setOrderStep(2)
         setLoadComplete(true)
-        navigate('/order/three', { replace: true })
+        navigate('/Pet_you/order/three', { replace: true })
       })
     })()
   }

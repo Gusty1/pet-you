@@ -8,7 +8,7 @@ function NotFound () {
   const picSrc = baseURL + "images/error/404.png"
 
   function goHome () {
-    navigate('/store')
+    navigate('/Pet_you/store')
   }
 
   return (

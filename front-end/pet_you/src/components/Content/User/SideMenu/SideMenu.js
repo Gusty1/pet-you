@@ -11,10 +11,10 @@ function SideMenu () {
 
   let testAry = [{
     key: 'm-1',
-    label: <Link to="/user">會員資料</Link>,
+    label: <Link to="/Pet_you/user">會員資料</Link>,
   }, {
     key: 'm-2',
-    label: <Link to="/user/buyHistory">購買紀錄</Link>,
+    label: <Link to="/Pet_you/user/buyHistory">購買紀錄</Link>,
   }, {
     key: 'm-3',
     label: <Button onClick={userFunction} type="primary" danger>登出</Button>,
@@ -22,7 +22,7 @@ function SideMenu () {
 
   //菜單點擊事件
   function userFunction () {
-    navigate('/user')
+    navigate('/Pet_you/user')
     userStore.userRemoveCookie()
   }
 

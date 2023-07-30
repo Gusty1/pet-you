@@ -34,36 +34,36 @@ function App () {
   return (
     <ConfigProvider locale={zhTW}>
       <Layout className="layout">
-        <Header />
+        {window.location.href.indexOf('/error') !== -1 ? <></> : <Header />}
         <Layout style={{
           minHeight: '85.7vh',
         }}>
 
           <Routes>
-            <Route path='/' element={<StoreContent />}></Route>
-            <Route path='/store' element={<StoreContent />}>
+            <Route path='/Pet_you' element={<StoreContent />}></Route>
+            <Route path='/Pet_you/store' element={<StoreContent />}>
               <Route index element={< ListCard />}></Route>
-              <Route path='/store/:type' element={< ListCard />}></Route>
+              <Route path='/Pet_you/store/:type' element={< ListCard />}></Route>
             </Route>
-            <Route path='/storeDetail/:id' element={< Detail />}></Route>
-            <Route path='/order' element={<Order />}>
-              <Route index path='/order/one' element={<Step1 />}></Route>
-              <Route index path='/order/two' element={<Step2 />}></Route>
-              <Route index path='/order/three' element={<Step3 />}></Route>
+            <Route path='/Pet_you/storeDetail/:id' element={< Detail />}></Route>
+            <Route path='/Pet_you/order' element={<Order />}>
+              <Route index path='/Pet_you/order/one' element={<Step1 />}></Route>
+              <Route index path='/Pet_you/order/two' element={<Step2 />}></Route>
+              <Route index path='/Pet_you/order/three' element={<Step3 />}></Route>
             </Route>
-            <Route path='/user' element={<UserContent />}>
+            <Route path='/Pet_you/user' element={<UserContent />}>
               <Route index element={<UserInfo />}></Route>
-              <Route path='/user/buyHistory' element={<BuyHistory />}></Route>
+              <Route path='/Pet_you/user/buyHistory' element={<BuyHistory />}></Route>
             </Route>
-            <Route path='/shop' element={<Shop />}></Route>
-            <Route path='/vet' element={<Vet />}></Route>
-            <Route path='/lost' element={<Lost />}></Route>
-            <Route path="/error" element={<ErrorPage />}></Route>
+            <Route path='/Pet_you/shop' element={<Shop />}></Route>
+            <Route path='/Pet_you/vet' element={<Vet />}></Route>
+            <Route path='/Pet_you/lost' element={<Lost />}></Route>
+            <Route path="/Pet_you/error" element={<ErrorPage />}></Route>
             <Route path="*" element={<NotFound />}></Route>
           </Routes>
 
         </Layout>
-        <Footer />
+        {window.location.href.indexOf('/error') !== -1 ? <></> : <Footer />}
       </Layout>
     </ConfigProvider>
   )

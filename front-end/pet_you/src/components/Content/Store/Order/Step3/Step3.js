@@ -9,7 +9,7 @@ function Step3 () {
 
   function goHome () {
     storeStore.setOrderStep(0)
-    navigate('/store')
+    navigate('/Pet_you/store')
   }
 
   return (

@@ -38,7 +38,7 @@ function Login () {
   //前往登入
   function goLogin () {
     userStore.setUserCookie(selectedUser)
-    navigate('/user')
+    navigate('/Pet_you/user')
   }
 
   return (

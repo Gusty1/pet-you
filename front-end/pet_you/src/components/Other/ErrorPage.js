@@ -1,12 +1,10 @@
-import { Button, Result, Image } from 'antd'
-import { useNavigate } from "react-router-dom"
+import { Result, Image } from 'antd'
 
 import { baseURL } from '../../utils'
 import { useEffect, useState } from 'react'
 
 function NotFound () {
   const [picURL, setPicURL] = useState(baseURL + 'images/error/error.jpg')
-  const navigate = useNavigate()
 
   useEffect(() => {
     (async function getPic () {
@@ -25,17 +23,12 @@ function NotFound () {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  function goHome () {
-    navigate('/store')
-  }
-
   return (
     <Result
       status="error"
       title="非常抱歉，發生了點問題ˊ_ˋ"
       subTitle="給你看可愛貓貓，不要生氣"
-      icon={<Image height='50vh' width='50vw' preview={false} src={picURL} alt='貓貓不給看' />}
-      extra={<Button type="primary" onClick={goHome}> 回首頁</Button >}
+      icon={<Image height='70vh' width='52vw' preview={false} src={picURL} alt='貓貓不給看' />}
     />
   )
 }

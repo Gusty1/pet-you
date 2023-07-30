@@ -76,7 +76,7 @@ function Step1 () {
         storeStore.setChangeOrderCar()
         storeStore.setOrderStep(1)
         setLoadComplete(true)
-        navigate('/order/two')
+        navigate('/Pet_you/order/two')
       })
     })()
   }

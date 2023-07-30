@@ -101,7 +101,7 @@ function ListCard () {
 
   //前往商品詳細頁
   function goDetail (id) {
-    navigate('/storeDetail/' + id)
+    navigate('/Pet_you/storeDetail/' + id)
   }
 
   return (
