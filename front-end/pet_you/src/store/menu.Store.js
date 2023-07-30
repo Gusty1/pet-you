@@ -33,8 +33,9 @@ class MenuStore {
     this.storeMenuSelected = e.key
     Cookies.set('storeMenuSelected', this.storeMenuSelected)
   }
-  setError = () => {
-    this.error = true
+
+  setError = (data) => {
+    this.error = data
   }
 
 }

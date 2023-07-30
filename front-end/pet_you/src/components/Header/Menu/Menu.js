@@ -57,9 +57,10 @@ function HeaderMenu () {
             label: <Link to="/Pet_you/user">{response.data.data.nickName}</Link>
           }
         ])
+        menuStore.setError(false)
       }).catch((error) => {
         console.log(error)
-        menuStore.setError()
+        menuStore.setError(true)
         navigate('/Pet_you/error')
       })
     })()

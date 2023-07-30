@@ -26,11 +26,10 @@ useAxios.interceptors.response.use((response) => {
   // controller.abort()
   return response
 }, (error) => {
-  controller.abort()
+  // controller.abort()
   //超出2XX的狀態碼都會觸發，對該錯誤做點甚麼
   console.log(error)
   // window.location.assign("/Pet_you/error")
-  // window.location.href = 'https://gusty1.github.io/Pet_you/error'
   return Promise.reject(error)
 })
 
