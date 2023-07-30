@@ -22,7 +22,8 @@ function ListCard () {
   useEffect(() => {
     (async function getData () {
       setLoadComplete(false)
-      await useAxios.get('stores/' + params.type, {
+      let thisType = params.type === undefined ? 'food' : params.type
+      await useAxios.get('stores/' + thisType, {
         params: storeStore.storeObj
       }).then((response) => {
         // console.log(response)
@@ -61,6 +62,12 @@ function ListCard () {
       }).catch((error) => {
         console.log(error)
         menuStore.setError(true)
+        menuStore.storeMenuAcceptClick({ key: 's-1' })
+        storeStore.setStoreObj({
+          pageNum: 1,
+          name: '',
+          order: 'ASC'
+        })
         navigate('/Pet_you/error')
       })
     })()

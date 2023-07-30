@@ -61,6 +61,12 @@ function HeaderMenu () {
       }).catch((error) => {
         console.log(error)
         menuStore.setError(true)
+        menuStore.storeMenuAcceptClick({ key: 's-1' })
+        storeStore.setStoreObj({
+          pageNum: 1,
+          name: '',
+          order: 'ASC'
+        })
         navigate('/Pet_you/error')
       })
     })()
