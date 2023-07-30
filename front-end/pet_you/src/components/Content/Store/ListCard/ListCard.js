@@ -9,7 +9,7 @@ import { useAxios, baseURL } from '../../../../utils'
 import { useStore } from '../../../../store/index.js'
 
 function ListCard () {
-  const { userStore, storeStore } = useStore()
+  const { menuStore, userStore, storeStore } = useStore()
   const { Title, Text } = Typography
   const params = useParams()
   const [loadComplete, setLoadComplete] = useState(false)
@@ -57,6 +57,11 @@ function ListCard () {
           }))
         }
         setLoadComplete(true)
+        menuStore.setError(false)
+      }).catch((error) => {
+        console.log(error)
+        menuStore.setError(true)
+        navigate('/Pet_you/error')
       })
     })()
     // eslint-disable-next-line react-hooks/exhaustive-deps
