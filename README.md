@@ -1,9 +1,7 @@
-# Pet你
-front
-: react、mobx
+# Pet 你
 
-back
-: springMVC
+賣寵物商品的小電商
 
-database
-: mysql
+- frontend: react(mobx)
+- backend: springMVC
+- database: mysql、myBatis
